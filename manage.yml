@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: yes
+
+  tasks:
+    - debug: msg="You'll need ansible >= 2 to update all packages (https://goo.gl/4J8NXy) {{ ansible_version }}"
+      when: ansible_version.major >= "2"
+
